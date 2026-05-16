@@ -1,0 +1,8 @@
+name = "birthday-stories"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "birthday-stories-db"
+database_id = "PLACEHOLDER_WILL_BE_FILLED"
