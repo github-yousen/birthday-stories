@@ -1,5 +1,6 @@
 // POST /api/stories - 发布故事
 import { ensureUid, getClientIp, sha256, calcExcerpt, makeAnonNickname, calcHotScore, pad2 } from '../_shared.js';
+import { notifyStoryUpdate } from '../_indexnow.js';
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -68,6 +69,11 @@ export async function onRequestPost({ request, env }) {
       `).bind(year, month, day, finalNickname, isCustom, story, excerpt, ipHash, uid, lang || 'zh', initHot, now, now).run();
       storyId = result.meta?.last_row_id;
     }
+
+    // 异步 ping IndexNow（Bing/Yandex 立刻收录），失败也不影响响应
+    try {
+      await notifyStoryUpdate(env, storyId, year, month, day);
+    } catch (_) { /* swallow */ }
 
     return new Response(JSON.stringify({
       ok: true,
