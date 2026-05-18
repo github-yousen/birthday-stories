@@ -367,6 +367,7 @@ export function renderHead({ title, desc, lang, url, schema }) {
 <meta name="description" content="${escapeHtml(desc)}">
 <meta name="keywords" content="生日故事,同生日,birthday stories,birthday twins,share birthday,生日分享">
 <meta name="robots" content="index,follow">
+<meta name="google-site-verification" content="oaKEc7HeCzTgUxnhrbm9FBMurc2e2FnWpKTMLfidn8Y">
 <link rel="canonical" href="${escapeHtml(url)}">
 <link rel="alternate" hreflang="${lang}" href="${escapeHtml(url)}">
 <link rel="alternate" hreflang="${altLang}" href="${escapeHtml(altUrl.toString())}">
