@@ -5,4 +5,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "DB"
 database_name = "birthday-stories-db"
-database_id = "PLACEHOLDER_WILL_BE_FILLED"
+database_id = "db4329e0-f0f7-4843-9845-c4a3e0583144"

@@ -5,3 +5,7 @@ node_modules/
 .DS_Store
 .env
 .env.local
+
+# 本地一次性脚本（含凭据，不入库）
+init_d1.py
+.dev.vars
